@@ -76,6 +76,7 @@ export default {
     },
     closeForm ({ commit }) {
       commit('setOpenForm', false)
+      commit('setEdit', false)
     },
     openForm ({ commit }) {
       commit('setOpenForm', true)

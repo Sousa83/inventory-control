@@ -108,7 +108,7 @@ export default {
       return quantity <= 20 ? 'red' : quantity <= 50 ? 'warning' : 'green'
     },
     getBagdeLabel (quantity) {
-      return quantity <= 20 ? `${quantity} (Crítico)` : quantity <= 50 ? `${quantity} (Alerta) ` : `${quantity} (Ok)`
+      return quantity <= 20 ? '(Crítico)' : quantity <= 50 ? '(Alerta)' : '(Ok)'
     }
   }
 }
