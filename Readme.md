@@ -1,6 +1,19 @@
 # Aplicação | Controle de estoque
 -----
-## Api
+## Uso da aplicação
+git clone https://github.com/Sousa83/inventory-control
+    
+### Api 
+    rode o script SQL que está em api/src no mysql.
+    sete as configurações de host, username e password. Se for necessário, mude port e o database para o que for melhor.
+    npm i. 
+    npm start -> Api estará no ar
+
+### Front-end
+    yarn install
+    quasar dev -> A aplicação estará no ar
+
+## Api | Organização de pastas
     src
         cases
             Todos os casos (ações possívels) para o endpoint de product
@@ -29,7 +42,7 @@
     package-lock.json
     tsconfig.json
 
-## Front-end
+## Front-end | Organização de pastas
     .quasar
         arquivos de configuração da aplicação quasar
     public
