@@ -25,16 +25,16 @@ export default {
   },
   mutations: {
     setOpenForm (state, product) {
-      if (!product) { state.openForm = !state.openForm } else { state.openForm = product }
+      if (product === undefined) { state.openForm = !state.openForm } else { state.openForm = product }
     },
     setEdit (state, product) {
-      if (!product) { state.edit = !state.edit } else { state.edit = product }
+      if (product === undefined) { state.edit = !state.edit } else { state.edit = product }
     },
     setProductSelectId (state, product) {
       state.productSelectedId = product
     },
     setDelete (state, product) {
-      if (!product) { state.delete = !state.delete } else { state.delete = product }
+      if (product === undefined) { state.delete = !state.delete } else { state.delete = product }
     }
   },
   actions: {

@@ -1,6 +1,6 @@
 <template>
   <q-card class="card bg-grey-3">
-    <ProductForm v-if="formState" @closeForm="closeForm" @addProduct="saveAndFind"/>
+    <ProductForm v-if="formState" @closeForm="closeAndFind" @addProduct="saveAndFind"/>
     <ProductList v-else :products="products" @openForm="openForm"/>
     <DeleteDialog v-model="openDelete" @onCancel="closeDelete" @onConfirm="deleteAndFind"/>
   </q-card>
@@ -39,6 +39,10 @@ export default {
     }),
     async saveAndFind (productModel) {
       this.products = await this.saveProduct(productModel)
+    },
+    async closeAndFind () {
+      this.closeForm()
+      this.products = await Service.index()
     },
     async deleteAndFind () {
       this.products = await this.confirmDelete()

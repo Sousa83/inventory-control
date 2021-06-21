@@ -17,6 +17,12 @@ export default class AlterProduct {
     if(!product)
       throw new ResponseError(`Cannot be found a product with this id: ${id}`);
 
+    const products = (await this.productRepository.findAll())
+      .filter(p => p.name === productDTO.name)
+
+    if(products.length !== 0 && !product)
+      throw new ResponseError(`Already exists a product with this name ${productDTO.name}`)
+
     Object.assign(product, productDTO);
     return await this.productRepository.saveProduct(product);
   }
