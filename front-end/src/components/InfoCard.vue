@@ -45,12 +45,6 @@
         <q-list>
           <q-item>
             <q-item-section avatar>
-              <img src="../assets/yarn.jpg" alt="Yarn">
-            </q-item-section>
-            <q-item-section>Quasar framework</q-item-section>
-          </q-item>
-          <q-item>
-            <q-item-section avatar>
               <img src="../assets/javascript.png" alt="Javascript">
             </q-item-section>
             <q-item-section>Javascript</q-item-section>
