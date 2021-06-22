@@ -2,7 +2,7 @@
   <q-card flat bordered class="card">
     <q-card-section>
       <q-table
-        :data="products"
+        :data="productsFormated"
         :columns="columns"
         virtual-scroll
         title="Produtos"
@@ -97,6 +97,18 @@ export default {
           align: 'center'
         }
       ]
+    }
+  },
+  computed: {
+    productsFormated () {
+      return this.products.map(p => {
+        p.price = new Intl.NumberFormat('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }).format(p.price)
+
+        return p
+      })
     }
   },
   methods: {

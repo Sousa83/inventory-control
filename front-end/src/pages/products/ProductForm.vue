@@ -84,7 +84,15 @@ export default {
   },
   async created () {
     if (this.isEdit) {
-      this.model = await Service.show(this.productSelectedId)
+      const resp = await Service.show(this.productSelectedId)
+
+      const priceFormated = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(resp.price)
+
+      this.model = resp
+      this.model.price = priceFormated
     } else {
       this.model = {}
     }
